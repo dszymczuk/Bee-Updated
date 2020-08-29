@@ -12,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     marginTop: 0
   },
-  paper: {
-    padding: '6px 16px',
+  content: {
+    padding: '0 16px 6px 16px',
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
@@ -31,10 +31,10 @@ export default function TimeLineItem({ avatar, color, title, date, image, text, 
   return (
     <TimelineItem className={classes.oposite}>
       <TimelineSeparator>
-        <TimelineDot style={{ backgroundColor: color, marginBottom: 0 }}>{avatar}</TimelineDot>
+        <TimelineDot style={{ backgroundColor: color, marginBottom: 0, marginTop: 0 }}>{avatar}</TimelineDot>
         <TimelineConnector style={{ backgroundColor: color }}/>
       </TimelineSeparator>
-      <TimelineContent>
+      <TimelineContent className={classes.content}>
         <PostItem
           title={title}
           date={date}
