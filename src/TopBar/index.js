@@ -15,6 +15,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ProfileMenu from "./ProfileMenu";
+import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -83,6 +84,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  logo: {
+    height: 50,
+    marginRight: 10,
+  }
 }));
 
 export default function PrimarySearchAppBar() {
@@ -101,6 +106,7 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon/>
           </IconButton>
+          <img className={classes.logo} src="/beeupdate_100h.png"/>
           <Typography className={classes.title} variant="h6" noWrap>
             Bee Update
           </Typography>
