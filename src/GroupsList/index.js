@@ -86,7 +86,7 @@ const GroupsList = () => {
       secondary: chance.name()
     },
     {
-      primary: "Corporate newsletter",
+      primary: "Docker newsletter",
       secondary: chance.name()
     }
   ];
