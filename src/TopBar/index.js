@@ -8,6 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import ProfileMenu from "./ProfileMenu";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -76,6 +77,13 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     height: 50,
     marginRight: 10,
+  },
+  logoLink: {
+    display: "flex",
+    flexDirection: "row",
+    textDecoration: "none",
+    color: 'inherit',
+    alignItems: "center"
   }
 }));
 
@@ -95,10 +103,12 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon/>
           </IconButton>
-          <img alt="bee update logo" className={classes.logo} src="/beeupdate_100h.png"/>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Bee Update
-          </Typography>
+          <Link to="/" className={classes.logoLink}>
+            <img alt="bee update logo" className={classes.logo} src="/beeupdate_100h.png"/>
+            <Typography className={classes.title} variant="h6" noWrap>
+              Bee Update
+            </Typography>
+          </Link>
           <div className={classes.grow}/>
 
           <div className={classes.search}>
