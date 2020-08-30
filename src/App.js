@@ -8,7 +8,9 @@ import GroupsList from "./GroupsList";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 
-const styles = (theme) => (console.log(theme), {
+const styles = (theme) => (
+  // console.log(theme),
+    {
   root: {
     // padding: 16,
     // [breakpoints.up("sm")]: {
@@ -48,7 +50,8 @@ const App = ({ classes }) => {
               <GroupsList/>
               {/*<NavContentEx/>*/}
             </Grid>
-            <Grid item xs={12} sm={9}>
+            <Grid item xs={0} sm={1} />
+            <Grid item xs={12} sm={7}>
               <PostList/>
             </Grid>
           </Grid>
