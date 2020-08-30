@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import Typography from "@material-ui/core/Typography";
-import CardContent from "@material-ui/core/CardContent";
-import Avatar from "@material-ui/core/Avatar";
 import Chance from 'chance';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import { ReactComponent as JiraIcon } from "./jira.svg";
+
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const chance = new Chance();
 
@@ -28,9 +29,37 @@ const filesCount = 6;
 
 export default [
   {
+    avatar:
+      <SvgIcon>
+        <JiraIcon style={{ color: '#fff', fontSize: 40 }}/>
+      </SvgIcon>,
+    title: "Ticket BU-001 has been updated",
+    date: "1.09.2020",
+    color: "#0052CC",
+    image: "",
+    text: <Fragment>
+      <Typography variant="subtitle1" style={{ fontWeight: "bold" }}>Description:</Typography>
+      <Typography paragraph>{chance.paragraph({ sentences: 3 })}</Typography>
+      <Typography paragraph><span style={{ fontWeight: "bold" }}>Current status: </span><span style={{ color: "#0052CC" }}>ready for test</span>
+      </Typography>
+    </Fragment>,
+    extraText: <Fragment>
+      <Typography paragraph>Changed files:</Typography>
+      {new Array(filesCount).fill(null).map(() => (
+        <Typography variant="body2">{`${chance.word({ syllables: 3 })}.js `}
+          (<span style={{ color: 'green' }}>+{chance.integer({ min: 1, max: 20 })
+          }</span><span style={{ color: 'red' }}> -{chance.integer({ min: 1, max: 20 })
+          }</span>)
+        </Typography>
+      ))
+      }
+    </Fragment>,
+  },
+  {
     avatar: <GitHubIcon style={{ fontSize: 40 }}/>,
     title: "New pull request has been created",
     date: "1.09.2020",
+    color: "#333",
     image: "",
     text: <Fragment>
       <Typography variant="subtitle1" style={{ fontWeight: "bold" }}>Description:</Typography>
@@ -51,7 +80,10 @@ export default [
     </Fragment>,
   },
   {
-    avatar: <Avatar aria-label="Recipe" src={"https://picsum.photos/id/1005/100/100"}/>,
+    avatar:
+      <Fragment>
+        <img src="https://picsum.photos/id/1005/100/100"/>
+      </Fragment>,
     title: "Title",
     date: "2.09.2020",
     image: `https://picsum.photos/seed/${randomIntFromInterval()}/800/500`,
