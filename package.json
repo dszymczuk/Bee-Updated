@@ -1,7 +1,7 @@
 {
-  "name": "social-remotely",
+  "name": "bee-update",
   "version": "0.0.0",
-  "description": "Social Remotely App",
+  "description": "Bee Update App",
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
