@@ -6,6 +6,7 @@ import TimelineConnector from '@material-ui/lab/TimelineConnector';
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import PostItem from "./../PostItem";
+import Avatar from "@material-ui/core/Avatar";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     '&::before': {
       display: 'none'
     }
+  },
+  avatar: {
+    backgroundColor: "transparent"
   }
 }));
 
@@ -31,7 +35,11 @@ export default function TimeLineItem({ avatar, color, title, date, image, text, 
   return (
     <TimelineItem className={classes.oposite}>
       <TimelineSeparator>
-        <TimelineDot style={{ backgroundColor: color, marginBottom: 0, marginTop: 0 }}>{avatar}</TimelineDot>
+        <TimelineDot style={{ backgroundColor: color, marginBottom: 0, marginTop: 0 }}>
+          <Avatar aria-label="avatar" className={classes.avatar}>
+            {avatar}
+          </Avatar>
+        </TimelineDot>
         <TimelineConnector style={{ backgroundColor: color }}/>
       </TimelineSeparator>
       <TimelineContent className={classes.content}>
