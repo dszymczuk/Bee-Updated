@@ -6,37 +6,43 @@ import TopBar from "./TopBar";
 import { withStyles } from "@material-ui/core/styles";
 import GroupsList from "./GroupsList";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const styles = (theme) => (
   // console.log(theme),
-    {
-  root: {
-    // padding: 16,
-    // [breakpoints.up("sm")]: {
-    //   padding: 24,
-    //   maxWidth: 500,
-    //   margin: "auto"
-    // },
-    // [breakpoints.up("md")]: {
-    //   maxWidth: 700
-    // }
-    // backgroundColor: 'red'
-  },
-  topBar: {
-    backgroundColor: theme.palette.primary.main,
-    ...theme.mixins.toolbar,
-    [theme.breakpoints.up('sm')]: {
-      marginBottom: '50px',
+  {
+    root: {
+      // padding: 16,
+      // [breakpoints.up("sm")]: {
+      //   padding: 24,
+      //   maxWidth: 500,
+      //   margin: "auto"
+      // },
+      // [breakpoints.up("md")]: {
+      //   maxWidth: 700
+      // }
+      // backgroundColor: 'red'
     },
+    topBar: {
+      backgroundColor: theme.palette.primary.main,
+      ...theme.mixins.toolbar,
+      [theme.breakpoints.up('sm')]: {
+        marginBottom: '50px',
+      },
 
-  }
-});
+    }
+  });
 
 
 const App = ({ classes }) => {
 
   return (
+    <Router>
       <div className={classes.root}>
         <CssBaseline/>
         <div className={classes.topBar}>
@@ -50,13 +56,24 @@ const App = ({ classes }) => {
               <GroupsList/>
               {/*<NavContentEx/>*/}
             </Grid>
-            <Grid item xs={0} sm={1} />
+            <Grid item xs={0} sm={1}/>
             <Grid item xs={12} sm={7}>
-              <PostList/>
+              <Switch>
+                <Route exact path="/addGroup">
+                  <div>Add group</div>
+                </Route>
+                <Route exact path="/findGroup">
+                  <div>Find group</div>
+                </Route>
+                <Route exact path="/">
+                  <PostList/>
+                </Route>
+              </Switch>
             </Grid>
           </Grid>
         </Container>
       </div>
+    </Router>
   )
 };
 export default withStyles(styles)(App);

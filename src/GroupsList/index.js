@@ -13,6 +13,10 @@ import Badge from "@material-ui/core/Badge";
 import randomIntNumber from "../utils/randomIntNumber";
 import withStyles from "@material-ui/styles/withStyles";
 
+import {
+  Link
+} from "react-router-dom";
+
 const chance = new Chance();
 
 
@@ -68,6 +72,7 @@ const StyledBadge = withStyles((theme) => (
 //   },
 // }))(Badge);
 
+
 const GroupsList = () => {
   const classes = useStyles();
 
@@ -114,7 +119,7 @@ const GroupsList = () => {
         </ListItem>
       ))}
       <Divider/>
-      <ListItem button className={classes.listItem}>
+      <ListItem button className={classes.listItem} to="/findGroup" component={Link}>
         <ListItemAvatar>
           <Avatar>
             <SearchIcon/>
@@ -122,7 +127,7 @@ const GroupsList = () => {
         </ListItemAvatar>
         <ListItemText primary="Find group"/>
       </ListItem>
-      <ListItem button className={classes.listItem}>
+      <ListItem button className={classes.listItem} to="/addGroup" component={Link}>
         <ListItemAvatar>
           <Avatar>
             <AddCircleOutlineIcon/>
