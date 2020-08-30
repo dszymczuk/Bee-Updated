@@ -1,11 +1,7 @@
 /* eslint-disable */
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-import PostElement from "./../PostItem";
 import TimeLine from "./../TimeLine";
-import TimeLineGithub from "./../TimeLineGithub";
-import TimeLineJira from "./../TimeLineJira";
 
 const styles = ({ breakpoints }) => ({
   root: {
@@ -18,26 +14,14 @@ const styles = ({ breakpoints }) => ({
     // },
     [breakpoints.up("md")]: {
       maxWidth: 1100
-    // maxWidth:"100%",
+      // maxWidth:"100%",
     }
   }
 });
 
 const PostList = ({ classes }) => (
   <div className={classes.root}>
-    {/*<Typography variant={"overline"}>Post list</Typography>*/}
-    <TimeLineJira />
-    <TimeLineGithub />
-    <TimeLine />
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
-    {/*<PostElement/>*/}
+    <TimeLine/>
   </div>
 );
 
