@@ -19,12 +19,6 @@ const chance = new Chance();
   }
  */
 
-function randomIntFromInterval(min = 1031, max = 1039) { // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const color = chance.color();
-
 const filesCount = 6;
 
 export default [
@@ -80,7 +74,7 @@ export default [
     </Fragment>,
   },
   {
-    avatar: <img src="/sandwich.svg" style={{ height: 35 }}/>,
+    avatar: <img alt="avatar" src="/sandwich.svg" style={{ height: 35 }}/>,
     title: "Sandwich shop arrived 🥪",
     date: "",
     image: "/sandwiches.jpg",
@@ -106,7 +100,7 @@ export default [
   {
     avatar:
       <Fragment>
-        <img src="https://picsum.photos/id/1005/100/100"/>
+        <img alt="avatar" src="https://picsum.photos/id/1005/100/100"/>
       </Fragment>,
     title: "Bike trip this weekend 🚲",
     date: "2.09.2020",
@@ -115,7 +109,7 @@ export default [
       <Typography paragraph>
         You can register here.
       </Typography>,
-    color,
+    color: "darkcyan",
     extraText: "",
   }
 ]
