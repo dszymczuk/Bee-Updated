@@ -9,7 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 
 const avatarSize = 100;
 
-const useStyles = makeStyles((theme) => (console.log(theme),{
+const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
       margin: theme.spacing(2),
