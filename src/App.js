@@ -12,6 +12,7 @@ import {
   Route,
 } from "react-router-dom";
 import FindGroup from "./FindGroup";
+import AddGroup from "./AddGroup";
 
 const styles = (theme) => (
   // console.log(theme),
@@ -60,7 +61,7 @@ const App = ({ classes }) => {
             <Grid item xs={12} sm={7}>
               <Switch>
                 <Route exact path="/addGroup">
-                  <div>Add group</div>
+                  <AddGroup />
                 </Route>
                 <Route exact path="/findGroup">
                   <FindGroup />
