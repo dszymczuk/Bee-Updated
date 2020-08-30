@@ -98,10 +98,7 @@ export default [
     extraText: "",
   },
   {
-    avatar:
-      <Fragment>
-        <img alt="avatar" src="https://picsum.photos/id/1005/100/100"/>
-      </Fragment>,
+    avatar: <img alt="avatar" src="/avatar.png" style={{ height: 35 }}/>,
     title: "Bike trip this weekend 🚲",
     date: "2.09.2020",
     image: "/bike_forest.jpg",
