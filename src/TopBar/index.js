@@ -5,22 +5,13 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import ProfileMenu from "./ProfileMenu";
-import Avatar from "@material-ui/core/Avatar";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
-
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -42,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: fade(theme.palette.common.white, 0.25),
     },
-    // marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -64,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -106,7 +95,7 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon/>
           </IconButton>
-          <img className={classes.logo} src="/beeupdate_100h.png"/>
+          <img alt="bee update logo" className={classes.logo} src="/beeupdate_100h.png"/>
           <Typography className={classes.title} variant="h6" noWrap>
             Bee Update
           </Typography>
