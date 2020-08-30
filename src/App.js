@@ -10,8 +10,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+import FindGroup from "./FindGroup";
 
 const styles = (theme) => (
   // console.log(theme),
@@ -63,7 +63,7 @@ const App = ({ classes }) => {
                   <div>Add group</div>
                 </Route>
                 <Route exact path="/findGroup">
-                  <div>Find group</div>
+                  <FindGroup />
                 </Route>
                 <Route exact path="/">
                   <PostList/>
