@@ -18,7 +18,7 @@ export default function ProfileMenu() {
   return (
     <div>
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        <Avatar src={"http://i.pravatar.cc/300?img=5"}/>
+        <Avatar src="/avatar.png"/>
       </Button>
       <Menu
         id="simple-menu"
