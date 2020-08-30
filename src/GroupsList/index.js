@@ -31,14 +31,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const StyledBadge = withStyles((theme) => (console.log(theme),{
-  badge: {
-    right: 0,
-    top: 36,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
-  },
-}))(Badge);
+const StyledBadge = withStyles((theme) => (
+  // console.log(theme),
+  {
+    badge: {
+      right: 0,
+      top: 36,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: '0 4px',
+    },
+  }))(Badge);
 
 // const StyledBadge = withStyles((theme) => (console.log(theme),{
 //   badge: {
@@ -74,15 +76,15 @@ const GroupsList = () => {
 
   const items = [
     {
-      primary: "Chodźmy na piwo",
+      primary: "Bike lovers",
       secondary: chance.name()
     },
     {
-      primary: "Deploymenty",
+      primary: "Deployments",
       secondary: chance.name()
     },
     {
-      primary: "Korpo info",
+      primary: "Corporate newsletter",
       secondary: chance.name()
     }
   ];
@@ -121,7 +123,7 @@ const GroupsList = () => {
             <SearchIcon/>
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Znajdź grupę"/>
+        <ListItemText primary="Find group"/>
       </ListItem>
       <ListItem button className={classes.listItem}>
         <ListItemAvatar>
@@ -129,7 +131,7 @@ const GroupsList = () => {
             <AddCircleOutlineIcon/>
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Utwórz nową grupę"/>
+        <ListItemText primary="Create new group"/>
       </ListItem>
     </List>
   );
